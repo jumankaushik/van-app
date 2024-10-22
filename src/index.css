@@ -193,6 +193,16 @@ footer {
   padding-inline: 23px
 }
 
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.van-list-filter-buttons>a {
+  margin-right: 15px;
+  text-decoration: none;
+}
+
 .van-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -281,7 +291,7 @@ i[class*='van-type-'] {
   text-decoration: none;
 }
 
-.van-detail-container .back-button:visited {}
+/* .van-detail-container .back-button:visited {} */
 
 .van-detail-container .back-button span {
   text-decoration: underline;
