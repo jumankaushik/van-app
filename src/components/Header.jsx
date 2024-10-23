@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, NavLink} from 'react-router-dom'
+import imageUrl from '../images/avatar-icon.png'
 
 const Header = () => {
   return (
@@ -24,6 +25,12 @@ const Header = () => {
             >
               Vans
             </NavLink>
+            <Link to="login" className="login-link">
+                  <img
+                      src={imageUrl}
+                      className="login-icon"
+                  />
+              </Link>
           </nav>
     </header>
   )
