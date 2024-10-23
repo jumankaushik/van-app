@@ -14,6 +14,7 @@ const VanDetails = () => {
   }, [params.id])
 
   const search = location.state?.search || ""
+  const type = location.state?.type || "all"
 
   return (
     <div className="van-detail-container">
@@ -21,7 +22,7 @@ const VanDetails = () => {
             to={`..${search}`}
             relative="path"
             className="back-button"
-        >&larr; <span>Back to all vans</span></Link>
+        >&larr; <span>Back to {type} vans</span></Link>
             {van ? (
                 <div className="van-detail">
                     <img src={van.imageUrl} />
