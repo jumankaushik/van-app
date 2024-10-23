@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
-import Vans, {loader as vansLoader} from './pages/Vans/Vans'
+import Vans from './pages/Vans/Vans'
 import './server'
 import VanDetails from './pages/Vans/VanDetails'
 import Layout from './components/Layout'
@@ -25,6 +25,7 @@ import HostVanPricing from './pages/Host/HostVanPricing'
 import HostVanPhotos from './pages/Host/HostVanPhotos'
 import NotFound from './pages/NotFound'
 import Login from './pages/Login'
+import AuthRequired from './components/AuthRequired'
 
 const router = createBrowserRouter(createRoutesFromElements(
       <Route element={<Layout/>}>
@@ -33,12 +34,12 @@ const router = createBrowserRouter(createRoutesFromElements(
           <Route
             path="vans"
             element={<Vans />}
-            errorElement={<Error />}
-            loader={vansLoader}
           />
           <Route path='login' element={<Login/>}/>
           <Route path='/vans/:id' element={<VanDetails/>} />
-          <Route path='host' element={<HostLayout/>}>
+
+          <Route element={<AuthRequired/>}>
+            <Route path='host' element={<HostLayout/>}>
             <Route index element={<Dashboard/>} />
             <Route path='income' element={<Income/>} />
             <Route path='reviews' element={<Reviews/>} />
@@ -49,6 +50,8 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route path='photos' element={<HostVanPhotos/>}/>
             </Route>
           </Route>
+          </Route>
+
           <Route path='*' element={<NotFound/>}/>
         </Route>
 
