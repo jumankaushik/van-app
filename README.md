@@ -21,15 +21,16 @@ This project is a simple **van listing app** built for **practicing React routes
    git clone https://github.com/jumankaushik/van-app.git
 
 2. Navigate to the project directory:
-
-cd van-app
+    ```bash
+    cd van-app
 
 3. Install dependencies:
-npm install
+    ```bash
+    npm install
 
 4. Start the development server:
-
-npm run dev
+    ```bash
+    npm run dev
 
 5. Open your browser and go to http://localhost:5173 to see the app in action.
 
