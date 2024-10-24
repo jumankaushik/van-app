@@ -3,9 +3,9 @@ import imageUrl from '../../images/income-graph.png'
 
 export default function Income() {
     const transactionsData = [
-        { amount: 720, date: "Jan 3, '23", id: "1" },
-        { amount: 560, date: "Dec 12, '22", id: "2" },
-        { amount: 980, date: "Dec 3, '22", id: "3" },
+        { amount: 720, date: "Jan 3, '24", id: "1" },
+        { amount: 560, date: "Dec 12, '23", id: "2" },
+        { amount: 980, date: "Dec 3, '23", id: "3" },
     ]
     return (
         <section className="host-income">

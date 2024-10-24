@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, Link, Outlet, NavLink } from 'react-router-dom'
-import { getHostVans } from '../../api'
+import { getVan } from '../../api'
 
 const HostVanDetails = () => {
 
@@ -13,7 +13,7 @@ const HostVanDetails = () => {
         async function loadVans() {
             setLoading(true)
             try {
-                const data = await getHostVans(id)
+                const data = await getVan(id)
                 setCurrentVan(data)
             } catch (err) {
                 setError(err)
@@ -49,7 +49,7 @@ const HostVanDetails = () => {
             className="back-button"
         >&larr; <span>Back to all vans</span></Link>
 
-        <div className="host-van-detail-layout-container">
+        {currentVan ? <div className="host-van-detail-layout-container">
             <div className="host-van-detail">
                 <img src={currentVan.imageUrl} />
                 <div className="host-van-detail-info-text">
@@ -86,6 +86,7 @@ const HostVanDetails = () => {
             </nav>
             <Outlet context={{currentVan}}/>
         </div>
+        : null }
     </section>
   )
 }
